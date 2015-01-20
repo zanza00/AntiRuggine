@@ -19,6 +19,7 @@ class NatGeo {
         try {
             natgeo = NatGeo.getUrl();
             System.out.println(natgeo);
+            //the filename will be NatGeoPOTD-2015-01-31
             saveImage(natgeo, "NatGeoPOTD-" + today + ".jpg");
         } catch (IOException e) {
             e.printStackTrace();
