@@ -16,6 +16,7 @@ public class DateAndTime {
         System.out.println("timestamp instant: " + timestampNew);
         System.out.println("raw Date: " + date);
 
+        //deprecato
         date.setSeconds(date.getSeconds() - secondDelta);
 
         System.out.println("getSeconds(): " + date.getSeconds());
