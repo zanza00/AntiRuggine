@@ -5,6 +5,7 @@ package DailyChallenge.WordBattle;
  * r/dailyprogrammer Challenge #198 [easy]
  * redd.it/2syz7y
  */
+
 public class BattleFor {
 
     public static void main(String[] args) {
