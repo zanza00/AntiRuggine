@@ -17,10 +17,10 @@ public class BattleFor {
         System.out.println("write two words separated by space or \"exit\"");
         do {
             input = sc.nextLine();
-            if (input.equalsIgnoreCase("exit"))  break;
-            
+            if (input.equalsIgnoreCase("exit")) break;
+
             String[] str_array = input.split(" ");
-            
+
             WordBattle wordBattle = new WordBattle(str_array[0], str_array[1]).battle();
             String firstWord = wordBattle.getFirstString();
             String secondWord = wordBattle.getSecondString();
@@ -28,8 +28,7 @@ public class BattleFor {
             scoringSystem(firstWord, secondWord);
 
             System.out.println("enter another two words or \"exit\"");
-            } while (!input.equalsIgnoreCase("exit"));
-
+        } while (!input.equalsIgnoreCase("exit"));
 
 
     }
@@ -61,15 +60,19 @@ public class BattleFor {
         }
 
         public WordBattle battle() {
-            for(int i = 0; i < firstString.length(); i++) {
-                for(int j = 0; j < secondString.length(); j++) {
-                    if (firstString.charAt(i) == secondString.charAt(j)) {
-                        firstString = firstString.substring(0, i) + firstString.substring(i + 1);
-                        secondString = secondString.substring(0, j) + secondString.substring(j + 1);
+            battle(firstString, secondString);
+            return this;
+        }
+
+        public void battle(String string1, String string2) {
+            for (int i = 0; i < string1.length(); i++) {
+                for (int j = 0; j < string2.length(); j++) {
+                    if (string1.charAt(i) == string2.charAt(j)) {
+                        battle(string1.substring(0, i) + string1.substring(i + 1), string2.substring(0, j) + string2.substring(j + 1));
+                        return;
                     }
                 }
             }
-            return this;
         }
     }
 }
