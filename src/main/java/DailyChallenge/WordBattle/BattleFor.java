@@ -2,7 +2,7 @@ package DailyChallenge.WordBattle;
 
 /**
  * Created by @Simone on 23/01/2015.
- * r/dailyprogrammer/ Challenge #198 [easy]
+ * r/dailyprogrammer Challenge #198 [easy]
  * redd.it/2syz7y
  */
 public class BattleFor {
