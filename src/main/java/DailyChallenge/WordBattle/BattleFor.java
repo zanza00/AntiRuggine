@@ -42,14 +42,6 @@ public class BattleFor {
             this.secondString = secondString;
         }
 
-        public String getFirstString() {
-            return firstString;
-        }
-
-        public String getSecondString() {
-            return secondString;
-        }
-
         public WordBattle battle() {
             battle(firstString, secondString);
             return this;
@@ -59,7 +51,9 @@ public class BattleFor {
             for (int i = 0; i < string1.length(); i++) {
                 for (int j = 0; j < string2.length(); j++) {
                     if (string1.charAt(i) == string2.charAt(j)) {
-                        battle(string1.substring(0, i) + string1.substring(i + 1), string2.substring(0, j) + string2.substring(j + 1));
+                        firstString = string1.substring(0, i) + string1.substring(i + 1);
+                        secondString = string2.substring(0, j) + string2.substring(j + 1);
+                        battle(firstString, secondString);
                         return;
                     }
                 }
