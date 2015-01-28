@@ -17,30 +17,21 @@ public class BattleFor {
         System.out.println("write two words separated by space or \"exit\"");
         do {
             input = sc.nextLine();
-            if (input.equalsIgnoreCase("exit")) break;
+            if (input.equalsIgnoreCase("exit")) {
+                break;
+            }
 
             String[] str_array = input.split(" ");
 
             WordBattle wordBattle = new WordBattle(str_array[0], str_array[1]).battle();
-            String firstWord = wordBattle.getFirstString();
-            String secondWord = wordBattle.getSecondString();
 
-            scoringSystem(firstWord, secondWord);
+            wordBattle.scoringSystem();
 
             System.out.println("enter another two words or \"exit\"");
         } while (!input.equalsIgnoreCase("exit"));
 
 
     }
-
-    private static void scoringSystem(String firstString, String secondString) {
-        if (firstString.length() == secondString.length()) {
-            System.out.println("draw");
-        } else {
-            System.out.println(firstString.length() > secondString.length() ? "first win" : "second win");
-        }
-    }
-
 
     private static class WordBattle {
         private String firstString;
@@ -72,6 +63,14 @@ public class BattleFor {
                         return;
                     }
                 }
+            }
+        }
+
+        private void scoringSystem() {
+            if (firstString.length() == secondString.length()) {
+                System.out.println("draw");
+            } else {
+                System.out.println(firstString.length() > secondString.length() ? "first win" : "second win");
             }
         }
     }
