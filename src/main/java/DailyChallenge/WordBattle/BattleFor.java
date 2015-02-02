@@ -1,5 +1,6 @@
 package DailyChallenge.WordBattle;
 
+import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
@@ -10,11 +11,13 @@ import java.util.Scanner;
 
 public class BattleFor {
 
+    private static PrintStream ps = new PrintStream(System.out);
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         String input;
-        System.out.println("write two words separated by space or \"exit\"");
+        ps.println("write two words separated by space or \"exit\"");
         do {
             input = sc.nextLine();
             if (input.equalsIgnoreCase("exit")) {
@@ -27,7 +30,7 @@ public class BattleFor {
 
             wordBattle.scoringSystem();
 
-            System.out.println("enter another two words or \"exit\"");
+            ps.println("enter another two words or \"exit\"");
         } while (!input.equalsIgnoreCase("exit"));
 
 
@@ -62,9 +65,9 @@ public class BattleFor {
 
         private void scoringSystem() {
             if (firstString.length() == secondString.length()) {
-                System.out.println("draw");
+                ps.println("draw");
             } else {
-                System.out.println(firstString.length() > secondString.length() ? "first win" : "second win");
+                ps.println(firstString.length() > secondString.length() ? "first win" : "second win");
             }
         }
     }
