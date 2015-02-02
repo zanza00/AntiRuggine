@@ -28,19 +28,19 @@ public class BankPrinter {
             ArrayList<Integer> intNum = new ArrayList<>();
             for (char e : input.toCharArray()) if (Character.isDigit(e)) intNum.add(Character.getNumericValue(e));
 
-            BigDigit[] result = BigDigit.getBigDigitArrays(intNum);
-            BigDigit.printNumberArray(result);
+            BigNumber[] result = BigNumber.getBigDigitArrays(intNum);
+            BigNumber.printNumberArray(result);
             System.out.println("enter another");
         } while (!input.equalsIgnoreCase("exit"));
     }
 }
 
-    class BigDigit {
+    class BigNumber {
 
         int digit;
         String upperLine, middleLine, bottomLine;
 
-        public BigDigit(int digit) {
+        public BigNumber(int digit) {
             this.digit = digit;
             processNumber();
         }
@@ -118,21 +118,21 @@ public class BankPrinter {
             return bottomLine;
         }
 
-        public static BigDigit[] getBigDigitArrays(ArrayList<Integer> array) {
+        public static BigNumber[] getBigDigitArrays(ArrayList<Integer> array) {
             int[] intArray = new int[array.size()];
             for (int i = 0; i < intArray.length; i++) intArray[i] = array.get(i);
             return getBigDigitArray(intArray);
         }
 
-        private static BigDigit[] getBigDigitArray(int[] array) {
-            BigDigit[] result = new BigDigit[array.length];
-            for (int i = 0; i < result.length; i++) result[i] = new BigDigit(array[i]);
+        private static BigNumber[] getBigDigitArray(int[] array) {
+            BigNumber[] result = new BigNumber[array.length];
+            for (int i = 0; i < result.length; i++) result[i] = new BigNumber(array[i]);
             return result;
         }
 
-        public static void printNumberArray(BigDigit[] result) {
+        public static void printNumberArray(BigNumber[] result) {
             String upperLine = "", middleLine ="", bottomLine = "";
-            for (BigDigit e : result) {
+            for (BigNumber e : result) {
                 upperLine   += e.getUpperLine();
                 middleLine  += e.getMiddleLine();
                 bottomLine  += e.getBottomLine();
