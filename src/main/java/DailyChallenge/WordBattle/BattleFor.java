@@ -1,5 +1,7 @@
 package DailyChallenge.WordBattle;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
@@ -11,11 +13,11 @@ import java.util.Scanner;
 
 public class BattleFor {
 
-    private static PrintStream ps = new PrintStream(System.out);
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        final PrintStream ps = PSfactory.getStream("console");
+        final Scanner sc = new Scanner(System.in);
         String input;
         ps.println("write two words separated by space or \"exit\"");
         do {
@@ -28,11 +30,11 @@ public class BattleFor {
 
             WordBattle wordBattle = new WordBattle(str_array[0], str_array[1]).battle();
 
-            wordBattle.scoringSystem();
+            wordBattle.scoringSystem(ps);
 
             ps.println("enter another two words or \"exit\"");
         } while (!input.equalsIgnoreCase("exit"));
-
+        ps.close();
 
     }
 
@@ -63,12 +65,29 @@ public class BattleFor {
             }
         }
 
-        private void scoringSystem() {
+        private void scoringSystem(PrintStream ps) {
             if (firstString.length() == secondString.length()) {
                 ps.println("draw");
             } else {
                 ps.println(firstString.length() > secondString.length() ? "first win" : "second win");
             }
+        }
+    }
+
+    private static class PSfactory {
+        static public PrintStream getStream(String choice) {
+            PrintStream stream = null;
+            if (choice.equals("file")) {
+                try {
+                    stream =  new PrintStream(new File("Test.txt"));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            } else if (choice.equals("console")) {
+                stream = System.out;
+
+            }
+            return stream;
         }
     }
 }
