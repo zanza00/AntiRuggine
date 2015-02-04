@@ -17,3 +17,6 @@ Based on the r/dailyprogramming subreddit
 
 ### Pic of the Day
 A way to download a copy of the current pic of the day of various website (currently only National Geographic)
+
+### FilesManipulations
+experimenting with files manipulation (boring package I say)
