@@ -17,7 +17,7 @@ $(function () {
                     var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_' + photoDimension + '.jpg';
                     $('#images').text(' ');
                     $("<img>").attr({
-                        src: photoURL, class: '.animal'
+                        src: photoURL, 'class': '.animal'
                     }).appendTo("#images");
                     return false;
                 }
