@@ -22,9 +22,11 @@ $(function () {
                         alt: item.title,
                         title: item.title
                     }).appendTo("#images");
-                    $('#link-text').attr({
-                        href: "http://www.flickr.com/photos/" + item.owner + "/" + item.id
-                    });
+                    $('<a>').attr({
+                        href: "http://www.flickr.com/photos/" + item.owner + "/" + item.id,
+                        id: 'link-text'
+                    }).appendTo('#text');
+                    $('a#link-text').text('Link to original photo on Flickr');
                     return false;
                 }
             });
