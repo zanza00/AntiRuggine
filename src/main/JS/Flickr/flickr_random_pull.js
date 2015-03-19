@@ -1,8 +1,7 @@
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
-
-$(function () {
+function flickrPull() {
     var animalChoices = ['owl', 'otter', 'alpaca', 'frog', 'cat'];
     var animalSearch = animalChoices[getRandomInt(0, animalChoices.length)];
     //cambio il titolo della pagina, mettendo il nome dell'animale con la prima lettera maiuscola
@@ -16,13 +15,13 @@ $(function () {
                 if (i === randInt) {
                     var photoDimension = 'z';
                     var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_' + photoDimension + '.jpg';
-                    $('.loading').hide(500);
+                    $('.loading').hide(400);
                     $("<img>").attr({
                         src: photoURL,
                         'class': '.displayed',
                         alt: item.title,
                         title: item.title
-                    }).appendTo("#images");
+                    }).appendTo("#image");
                     $('<a>').attr({
                         href: "http://www.flickr.com/photos/" + item.owner + "/" + item.id,
                         id: 'link-text'
@@ -32,4 +31,13 @@ $(function () {
                 }
             });
         });
-});
+}
+
+function reload(){
+    $('.loading').show(250);
+    $('#image').text('');
+    $('#text').text('');
+    flickrPull()
+}
+
+$(document).ready(flickrPull());
