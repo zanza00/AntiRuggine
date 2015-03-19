@@ -13,7 +13,7 @@ $(function () {
             $.each(data.photos.photo, function (i, item) {
 
                 if (i === randInt) {
-                    var photoDimension = 'm';
+                    var photoDimension = 'z';
                     var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_' + photoDimension + '.jpg';
                     $('#images').text(' ');
                     $("<img>").attr({

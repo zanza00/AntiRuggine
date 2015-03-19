@@ -9,6 +9,11 @@ img.displayed {
     margin-right: auto
 }
 
+#container {
+    width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
 #reload {
     color: darkgreen;
     text-align: center;
@@ -20,7 +25,7 @@ img.displayed {
 }
 
 .center {
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*width: 80%;*/
 }
