@@ -22,6 +22,9 @@ $(function () {
                         alt: item.title,
                         title: item.title
                     }).appendTo("#images");
+                    $('#link-text').attr({
+                        href: "http://www.flickr.com/photos/" + item.owner + "/" + item.id
+                    });
                     return false;
                 }
             });
