@@ -15,18 +15,19 @@ function flickrPull() {
                 if (i === randInt) {
                     var photoDimension = 'z';
                     var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_' + photoDimension + '.jpg';
-                    $('.loading').hide(400);
                     $("<img>").attr({
                         src: photoURL,
-                        'class': '.displayed',
+                        'class': 'center',
                         alt: item.title,
-                        title: item.title
+                        title: item.title,
+                        id: 'animal-image'
                     }).appendTo("#image");
                     $('<a>').attr({
                         href: "http://www.flickr.com/photos/" + item.owner + "/" + item.id,
                         id: 'link-text'
                     }).appendTo('#text');
                     $('a#link-text').text('Link to original photo on Flickr');
+                    $('.loading').hide(400);
                     return false;
                 }
             });
