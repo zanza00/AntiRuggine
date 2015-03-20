@@ -28,13 +28,16 @@ function flickrPull() {
                     }).appendTo('#text');
                     $('a#link-text').text('Link to original photo on Flickr');
                     $('.loading').hide(400);
+                    $('#background-image').css({
+                        'background-image': 'url('+photoURL+')'
+                    });
                     return false;
                 }
             });
         });
 }
 
-function reload(){
+function reload() {
     $('.loading').show(250);
     $('#image').text('');
     $('#text').text('');

@@ -1,6 +1,6 @@
 body {
     background-color: #cbcbcb;
-    padding-bottom:20px;   /* Height of the footer */
+    margin-top: 0px;
 }
 
 a {
@@ -12,9 +12,11 @@ img.center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-color: #111111;
 }
 
 #container {
+    z-index: 9999;
     width: 640px;
     margin-left: auto;
     margin-right: auto;
@@ -24,25 +26,23 @@ img.center {
 
 #text {
     color: darkgreen;
-    text-align: center;
-    padding-top: 3%;
-    padding-bottom:20px; 
+    padding-bottom: 20px;
 }
 
 #reload {
     color: darkgreen;
     text-align: center;
-    position:static;
-    bottom:0;
-	left:0;
-    
-    height:50px;   /* Height of the footer */
+    position: static;
+    bottom: 0;
+    left: 0;
+
+    height: 50px; /* Height of the footer */
     width: 100%;
-/*    background-color: aquamarine;*/
 }
 
-#image, {
-    text-align: center;
+#image {
+    padding-bottom: 20px;
+
 }
 
 .loading {
@@ -51,5 +51,29 @@ img.center {
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
-    z-index: 1;
+}
+
+#background-image {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -11;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 0% 10%;
+    filter: grayscale(70%) blur(5px);
+}
+
+#text-box {
+    background-color: darkgrey;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#footer {
+    font-size: 10px;
 }
